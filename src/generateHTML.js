@@ -100,7 +100,7 @@ generateHTML = (data) => {
 
 // generate html page
 const generateTeamPage = function (employeeCards) {
-  return`
+    return `
   <!DOCTYPE html>
   <html lang="en">
   <head>

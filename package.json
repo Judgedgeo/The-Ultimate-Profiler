@@ -1,7 +1,7 @@
 {
   "name": "the-ultimate-profiler",
   "version": "1.0.0",
-  "description": "Its a Team Profiler",
+  "description": "an app to profile employees",
   "main": "index.js",
   "directories": {
     "lib": "lib",
@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/Judgedgeo/The-Ultimate-Profiler.git"
   },
-  "author": "George Jordan",
+  "author": "Judgedgeo",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Judgedgeo/The-Ultimate-Profiler/issues"
@@ -24,6 +24,5 @@
     "fs": "^0.0.1-security",
     "inquirer": "^8.2.4",
     "jest": "^29.4.3"
-  },
-  "devDependencies": {}
+  }
 }
