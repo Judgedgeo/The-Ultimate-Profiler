@@ -3,12 +3,13 @@
 }
 
 :root {
-    --primary: lightslategray;
-    --secondary: white;
+    --primary: black;
+    --secondary: Lime;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: coral;
 }
 
 #navbar {
