@@ -5,7 +5,7 @@ const Intern = require('../lib/Intern');
 test('creates an Intern object', () => {
     const intern = new Intern('John', 49, 'johnintern1@icloud.com', 'OSU');
 
-    expect(intern.school) .toEqual(expect.any(String));
+    expect(intern.school).toEqual(expect.any(String));
 });
 
 // gets school from getSchool()

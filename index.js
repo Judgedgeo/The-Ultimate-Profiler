@@ -15,7 +15,7 @@ const teamArray = [];
 
 // start of manager prompts
 const addManager = () => {
-    return inquirer.prompt ([
+    return inquirer.prompt([
         {
             type: 'input',
             name: 'name',
@@ -24,7 +24,7 @@ const addManager = () => {
                 if (nameInput) {
                     return true;
                 } else {
-                    console.log ("Please enter the manager's name!");
+                    console.log("Please enter the manager's name!");
                     return false;
                 }
             }
@@ -34,8 +34,8 @@ const addManager = () => {
             name: 'id',
             message: "Please enter the manager's ID.",
             validate: nameInput => {
-                if  (isNaN(nameInput)) {
-                    console.log ("Please enter the manager's ID!")
+                if (isNaN(nameInput)) {
+                    console.log("Please enter the manager's ID!")
                     return false;
                 } else {
                     return true;
@@ -51,7 +51,7 @@ const addManager = () => {
                 if (valid) {
                     return true;
                 } else {
-                    console.log ('Please enter an email!')
+                    console.log('Please enter an email!')
                     return false;
                 }
             }
@@ -61,8 +61,8 @@ const addManager = () => {
             name: 'officeNumber',
             message: "Please enter the manager's office number",
             validate: nameInput => {
-                if  (isNaN(nameInput)) {
-                    console.log ('Please enter an office number!')
+                if (isNaN(nameInput)) {
+                    console.log('Please enter an office number!')
                     return false;
                 } else {
                     return true;
@@ -70,13 +70,13 @@ const addManager = () => {
             }
         }
     ])
-    .then(managerInput => {
-        const  { name, id, email, officeNumber } = managerInput;
-        const manager = new Manager (name, id, email, officeNumber);
+        .then(managerInput => {
+            const { name, id, email, officeNumber } = managerInput;
+            const manager = new Manager(name, id, email, officeNumber);
 
-        teamArray.push(manager);
-        console.log(manager);
-    })
+            teamArray.push(manager);
+            console.log(manager);
+        })
 };
 
 const addEmployee = () => {
@@ -86,7 +86,7 @@ const addEmployee = () => {
     =================
     `);
 
-    return inquirer.prompt ([
+    return inquirer.prompt([
         {
             type: 'list',
             name: 'role',
@@ -101,7 +101,7 @@ const addEmployee = () => {
                 if (nameInput) {
                     return true;
                 } else {
-                    console.log ("Please enter an employee's name!");
+                    console.log("Please enter an employee's name!");
                     return false;
                 }
             }
@@ -111,8 +111,8 @@ const addEmployee = () => {
             name: 'id',
             message: "Please enter the employee's ID.",
             validate: nameInput => {
-                if  (isNaN(nameInput)) {
-                    console.log ("Please enter the employee's ID!")
+                if (isNaN(nameInput)) {
+                    console.log("Please enter the employee's ID!")
                     return false;
                 } else {
                     return true;
@@ -128,7 +128,7 @@ const addEmployee = () => {
                 if (valid) {
                     return true;
                 } else {
-                    console.log ('Please enter an email!')
+                    console.log('Please enter an email!')
                     return false;
                 }
             }
@@ -139,10 +139,10 @@ const addEmployee = () => {
             message: "Please enter the employee's github username.",
             when: (input) => input.role === "Engineer",
             validate: nameInput => {
-                if (nameInput ) {
+                if (nameInput) {
                     return true;
                 } else {
-                    console.log ("Please enter the employee's github username!")
+                    console.log("Please enter the employee's github username!")
                 }
             }
         },
@@ -155,7 +155,7 @@ const addEmployee = () => {
                 if (nameInput) {
                     return true;
                 } else {
-                    console.log ("Please enter the intern's school!")
+                    console.log("Please enter the intern's school!")
                 }
             }
         },
@@ -166,31 +166,31 @@ const addEmployee = () => {
             default: false
         }
     ])
-    .then(employeeData => {
-        // data for employee types
+        .then(employeeData => {
+            // data for employee types
 
-        let { name, id, email, role, github, school, confirmAddEmployee } = employeeData;
-        let employee;
+            let { name, id, email, role, github, school, confirmAddEmployee } = employeeData;
+            let employee;
 
-        if (role === "Engineer") {
-            employee = new Engineer (name, id, email, github);
+            if (role === "Engineer") {
+                employee = new Engineer(name, id, email, github);
 
-            console.log(employee);
+                console.log(employee);
 
-        } else if (role === "Intern") {
-            employee = new Intern (name, id, email, school);
+            } else if (role === "Intern") {
+                employee = new Intern(name, id, email, school);
 
-            console.log(employee);
-        }
+                console.log(employee);
+            }
 
-        teamArray.push(employee);
+            teamArray.push(employee);
 
-        if (confirmAddEmployee) {
-            return addEmployee(teamArray);
-        } else {
-            return teamArray;
-        }
-    })
+            if (confirmAddEmployee) {
+                return addEmployee(teamArray);
+            } else {
+                return teamArray;
+            }
+        })
 
 };
 
@@ -202,7 +202,7 @@ const writeFile = data => {
         if (err) {
             console.log(err);
             return;
-        // when the profile has been created
+            // when the profile has been created
         } else {
             console.log("Your team profile has been successfully created! Please check out the index.html")
         }
@@ -210,13 +210,13 @@ const writeFile = data => {
 };
 
 addManager()
-  .then(addEmployee)
-  .then(teamArray => {
-    return generateHTML(teamArray);
-  })
-  .then(pageHTML => {
-    return writeFile(pageHTML);
-  })
-  .catch(err => {
- console.log(err);
-  });
+    .then(addEmployee)
+    .then(teamArray => {
+        return generateHTML(teamArray);
+    })
+    .then(pageHTML => {
+        return writeFile(pageHTML);
+    })
+    .catch(err => {
+        console.log(err);
+    });

@@ -14,17 +14,18 @@
 
 ## Usage
 
-- To begin, right click on the Index.jsdoler, and open in Terminal.
+- To begin, right click on the Index.js folder, and open in Terminal.
 
 ![image](https://user-images.githubusercontent.com/115055273/223146271-a19e0938-2906-46ad-8e14-5270dcb8ef6a.png)
 
-- Type in node index.js into the terminal.
+- Type in node index.js into the Terminal.
 
 ![image](https://user-images.githubusercontent.com/115055273/223148425-341c7cda-d7d6-437a-89ed-feddf89a78e5.png)
 
-- Follow the prompt to create your team profile.
+- Follow the prompt to create your Team profile.
 
 ![image](https://user-images.githubusercontent.com/115055273/223150475-32f39cc9-da1f-4e7b-80df-89fb9a53fab4.png)
+
 
 - Once you are done with entering the role's of your employee's, then right click on the index.html folder to generate the Team Profile.
 ![image](https://user-images.githubusercontent.com/115055273/223151040-5b9e2809-712e-4b19-b8ea-c80726b7f50c.png)
