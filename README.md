@@ -3,7 +3,7 @@
 ## Description
 
 - This is an Ultimate Profiler app for your team.
-- Here is the link to the video: https://youtu.be/v5dM2Bcl9G0
+- Here is the link to the video: https://youtu.be/BPmyYStoOBA
 - Here is the link to the Github Repo: https://github.com/Judgedgeo/The-Ultimate-Profiler
 
 ## Installation
